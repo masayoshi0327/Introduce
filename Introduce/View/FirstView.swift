@@ -9,16 +9,16 @@ import SwiftUI
 
 struct FirstView: View {
     
-    @State var selected:Int = 0
+    @State var selected:Int = 1
     
     var body: some View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)){
         
             TabView(selection: $selected) {
-                FirstPage()
-                SecondPage()
-                ThirdPage()
+                FirstPage().tag(1)
+                SecondPage().tag(2)
+                ThirdPage().tag(3)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             
@@ -26,6 +26,9 @@ struct FirstView: View {
                 
                 ForEach(1..<4) { n in
                     Text("\(n)")
+                        .padding()
+                        .font(.title2)
+                        .foregroundColor(n == selected ? .red:.gray)
                 }
             }
         }

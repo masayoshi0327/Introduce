@@ -10,6 +10,8 @@ import SwiftUI
 struct SecondPage: View {
     var body: some View {
         Text("2枚目")
+            .font(.title)
+            .fontWeight(.bold)
     }
 }
 

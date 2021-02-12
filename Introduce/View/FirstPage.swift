@@ -10,6 +10,8 @@ import SwiftUI
 struct FirstPage: View {
     var body: some View {
         Text("1枚目")
+            .font(.title)
+            .fontWeight(.bold)
     }
 }
 
