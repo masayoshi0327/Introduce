@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct FirstView: View {
+    
+    @State var selected:Int = 0
+    
     var body: some View {
-        Text("はじめまして")
+        
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)){
+        
+            TabView(selection: $selected) {
+                FirstPage()
+                SecondPage()
+                ThirdPage()
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            
+            HStack{
+                
+                ForEach(1..<4) { n in
+                    Text("\(n)")
+                }
+            }
+        }
     }
 }
 

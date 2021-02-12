@@ -10,20 +10,14 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage(wrappedValue: true, "isFirstLaunch") var isFirstLaunch
-    @State var moveSheet:Bool = true
     
     var body: some View {
         VStack{
             Text("こんにちは")
                 .padding()
-//            Button(action: {
-//                moveSheet = true
-//            }, label: {
-//                Text("Button")
-//            })
-            .sheet(isPresented: $isFirstLaunch, content: {
-                FirstView()
-            })
+                .sheet(isPresented: $isFirstLaunch, content: {
+                    FirstView()
+                })
         }
     }
 }
